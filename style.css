@@ -1,0 +1,74 @@
+@font-face {
+    font-family:digital-7 ;
+    src: url(digital-7.regular.ttf);
+}
+:root{
+    --light-color:yellow;
+}
+
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family:  'Edu TAS Beginner', cursive;;
+
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: #CAD3C8;
+    background-image: url(digital.jpg);
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+    gap:50px
+}
+h2{
+    color: #1BF4F7;
+    font-size: 50px;
+    font-weight: 500;
+}
+.frame{
+    width: 600px;
+    height: 300px;
+    background-color:red;
+    border: 50px solid #9B2007;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow:rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    
+    font-size: 90px;
+    text-align: center;
+    line-height: 180px;
+
+
+}
+.clock{
+    font-family: digital-7;
+    color: white;
+    text-shadow:  0 0 20PX var(--light-color);
+    position: relative;
+}
+.clock::after{
+    content: attr(data-text);
+    position: absolute;
+    left: 20px;
+    top: 0;
+    filter: blur(30px);
+}
+.clock::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: var(--light-color);
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    filter: blur(40px);
+}
+
